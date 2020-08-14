@@ -11,17 +11,17 @@ spark = SparkSession.builder.appName("Structured_Streaming_Kafka_Integration").g
 
 ##### Read Stream Method to read the data from Kafka #####
 df = spark \
-    .readStream \
-    .format("kafka") \
-    .option("kafka.bootstrap.servers", <<<Server Address>>>) \
-	.option("kafka.security.protocol", "SASL_PLAINTEXT") \
-    .option("kafka.sasl.kerberos.service.name", "kafka") \
-	.option("kafka.sasl.kerberos.principal", <<<Kerberos Principal>>>) \
+    	.readStream \
+    	.format("kafka") \
+    	.option("kafka.bootstrap.servers", <<<Server Address>>>) \
+    	.option("kafka.security.protocol", "SASL_PLAINTEXT") \
+    	.option("kafka.sasl.kerberos.service.name", "kafka") \
+    	.option("kafka.sasl.kerberos.principal", <<<Kerberos Principal>>>) \
 	.option("kafka.sasl.mechanism", "GSSAPI") \
 	.option("kafka.security.kerberos.keytab", <<<KeyTab File>>>) \
 	.option("subscribe", <<<Kafka Topic Name>>>) \
 	.option("startingOffsets","earliest" ) \
-    .load()
+    	.load()
 
 ##### JSON Sample #####
 
