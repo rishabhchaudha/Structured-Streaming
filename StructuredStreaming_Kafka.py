@@ -2,6 +2,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
+##### Jars Required #####
+#spark-sql-kafka-0-10_2.11-2.4.6.jar
+#kafka-clients-2.4.1.jar
 
 spark = SparkSession.builder.appName("Structured_Streaming_Kafka_Integration").getOrCreate()
 	
